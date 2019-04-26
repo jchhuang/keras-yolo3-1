@@ -53,6 +53,7 @@ def _main():
         model.compile(optimizer=Adam(lr=1e-3), loss={
             # use custom yolo_loss Lambda layer.
             'yolo_loss': lambda y_true, y_pred: y_pred})
+    #loss: 字典键值对。键为输出层的name，值为该层对应的目标函数名或目标函数对象。 
 
         batch_size = 32
         print('Train on {} samples, val on {} samples, with batch size {}.'.format(num_train, num_val, batch_size))
